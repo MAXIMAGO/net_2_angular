@@ -32,3 +32,4 @@ With that in mind we use the angular-cli [generate command](https://www.npmjs.co
 ```bash
 ng g component components/project-list
 ```
+proceed to branch task2_implement_project-list
