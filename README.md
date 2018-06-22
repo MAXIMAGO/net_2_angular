@@ -25,4 +25,37 @@ We feel the need to dynamcly bind our layout to data and use the *ngFor expressi
   ...
 </div>
 ```
+
+We implement a corresponding property in the components *.ts file as well
+```typescript
+export class ProjectListComponent implements OnInit {
+  public projects = [{ Name: 'WPF' }, { Name: 'Angular' }];
+  ...
+```
+
+### Style the view
+Opposed to xaml styling is not done with in the visual markup but via css styles.
+So we edit the components css file to visualize the elements
+```css
+/** We define a container */
+.container {
+  padding: 8px;
+  background: skyblue;
+  font-size: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+/** We define the container's mouseover */
+.container:hover {
+  background: blue;
+  color:white;
+}
+
+/** We define a generic class for clickable elements */
+.clickable {
+  cursor: pointer;
+}
+
+```
 proceed to task3_first_service
