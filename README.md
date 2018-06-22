@@ -4,31 +4,25 @@ This project is integrated in the MAXIMAGO .NET to Angular Workshop as a hands o
 The readme describes a task on the way of creating your first angular application while acompanying the Structure of the Presentation.
 
 ## So far
-We created an app with the angular-cli. We are already able to test by running the angular-cli [serve command](https://www.npmjs.com/package/@angular/cli#usage) in the project folder
-```
-cd net2angular
-ng serve
-```
-or
-```
-cd net2angular
-npm run start
-```
+We created a new component project-list. The served project does still look the same since we haven't made use of the component yet.
 
-The later will execute ng serve but is in sync with the node package notation and should always result in running your application as needed
+## Task 2
+The project-list has a meaningufull name but no logic at all. We want create the visual component and place it in our app's view
 
-
-## Task 1
-We want to create an application wich allows the user to select a project type and based on the selection is able to set the project configuration.
-
-### Create a first component
-We want to create a list component to allow the selection of the project type
-
-Since we want to organize all our components in a subfolder __components__.
-With that in mind we use the angular-cli [generate command](https://www.npmjs.com/package/@angular/cli#generating-components-directives-pipes-and-services)
-
-*For windows users mind that only forward slashes are valid so c:\myPath\someFile.ext should look like c:/myPath/someFile.ext*
-
+### Define Html
+We open the project in vscode. Since its possible we do it right from the console
 ```bash
-ng g component components/project-list
+code .
 ```
+Then we open the src/app/components/project-list/project-list.component.html
+And define a layout for displaying items as we see fit.
+
+### Bind data
+We feel the need to dynamcly bind our layout to data and use the *ngFor expression to create a template for each element of an array.
+
+```html
+<div *ngFor="let project of projects">
+  ...
+</div>
+```
+proceed to task3_first_service

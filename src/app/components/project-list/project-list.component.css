@@ -1,0 +1,16 @@
+.container {
+  padding: 8px;
+  background: skyblue;
+  font-size: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.container:hover {
+  background: blue;
+  color:white;
+}
+
+.clickable {
+  cursor: pointer;
+}
