@@ -1,3 +1,4 @@
+import { ProjectService } from './../../services/project/project.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
-  public projects = [{ Name: 'WPF' }, { Name: 'Angular' }];
+  public Projects: { Name: string }[];
 
-  constructor() {}
+  constructor(private projectService: ProjectService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.Projects = this.projectService.getProjects();
+  }
 }

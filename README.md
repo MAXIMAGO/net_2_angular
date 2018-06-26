@@ -13,7 +13,7 @@ Since we do not want to use static data from code. We want to have a service pro
 Once again we use the angular-cli (generate command)[https://www.npmjs.com/package/@angular/cli#generating-components-directives-pipes-and-services] and create a service in __services__ since we like to have the structore clean we even put the service in asubfodler named after the servce
 
 ```bash
-ng g servcie services/project/project
+ng g service services/project/project
 ```
 ### Provide projects
 We implement a method in the servcie to provide the projects
