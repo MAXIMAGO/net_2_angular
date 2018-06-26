@@ -4,25 +4,29 @@ This project is integrated in the MAXIMAGO .NET to Angular Workshop as a hands o
 The readme describes a task on the way of creating your first angular application while acompanying the Structure of the Presentation.
 
 ## So far
-We created a new component project-list. The served project does still look the same since we haven't made use of the component yet.
+We created a project-component displaying our project types
 
-## Task 2
-The project-list has a meaningufull name but no logic at all. We want create the visual component and place it in our app's view
+## Task 3
+Since we do not want to use static data from code. We want to have a service provide the data for us as well as inject it to our component
 
-### Define Html
-We open the project in vscode. Since its possible we do it right from the console
+### Create the project-service
+Once again we use the angular-cli (generate command)[https://www.npmjs.com/package/@angular/cli#generating-components-directives-pipes-and-services] and create a service in __services__ since we like to have the structore clean we even put the service in asubfodler named after the servce
+
 ```bash
-code .
+ng g servcie services/project/project
 ```
-Then we open the src/app/components/project-list/project-list.component.html
-And define a layout for displaying items as we see fit.
+### Provide projects
+We implement a method in the servcie to provide the projects
 
-### Bind data
-We feel the need to dynamcly bind our layout to data and use the *ngFor expression to create a template for each element of an array.
+### Use the service
+We need to provide the services as well as inject it in our component.
+Afterwards we can use it to set the components projects member.
 
-```html
-<div *ngFor="let project of projects">
-  ...
-</div>
+### Dependency Injection
+In angular any constructor parameter is supposed to be injected if the instance itsself is provided via injection.
+The Service has to be provided by the app so we add it to the module's provider array.
+```typescript
+
 ```
-proceed to task3_first_service
+
+proceed to task4_first_service
