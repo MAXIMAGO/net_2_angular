@@ -1,3 +1,7 @@
-<div class="clickable container" *ngFor="let project of Projects">
-  {{project.Name}}
-</div>
+<mat-list>
+  <mat-list-item *ngFor="let project of Projects">
+    <button mat-button>
+      {{project.Name}}
+    </button>
+  </mat-list-item>
+</mat-list>
