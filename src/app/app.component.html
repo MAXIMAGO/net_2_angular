@@ -1,6 +1,6 @@
 <mat-sidenav-container class="app__container">
-  <mat-sidenav opened mode="side">
-    <app-project-list></app-project-list>
+  <mat-sidenav #menue mode="side">
+    <app-project-list (Loaded)="menue.toggle()"></app-project-list>
   </mat-sidenav>
   <mat-toolbar>Projekt Konfigurator</mat-toolbar>
   <router-outlet></router-outlet>

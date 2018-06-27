@@ -1,3 +1,4 @@
+import { IN_MEMORY_DB } from './storage/in-memory.imort';
 import { APP_ROUTING } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,11 +13,12 @@ import { MatListModule } from '@angular/material/list';
 import { WpfConfigComponent } from './components/wpf-config/wpf-config.component';
 import { AngularConfigComponent } from './components/angular-config/angular-config.component';
 import { ProjectNotFoundComponent } from './components/project-not-found/project-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const MATERIAL = [MatToolbarModule, MatButtonModule, MatSidenavModule, BrowserAnimationsModule, MatListModule];
 @NgModule({
   declarations: [AppComponent, ProjectListComponent, WpfConfigComponent, AngularConfigComponent, ProjectNotFoundComponent],
-  imports: [BrowserModule, MATERIAL, APP_ROUTING],
+  imports: [BrowserModule, HttpClientModule, IN_MEMORY_DB, MATERIAL, APP_ROUTING],
   providers: [],
   bootstrap: [AppComponent]
 })
