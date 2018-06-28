@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  padding: 16px;
+}
+
+.config__container {
+  display: flex;
+  flex-direction: column;
+}

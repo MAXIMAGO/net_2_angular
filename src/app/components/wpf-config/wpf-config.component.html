@@ -1,3 +1,26 @@
-<p>
-  wpf-config works!
-</p>
+<div class="config__container">
+  <form class="config__container" [formGroup]="Configuration">
+    <mat-form-field>
+      <input matInput formControlName="name" placeholder="Projektname">
+      <mat-error *ngIf="Configuration.controls['name'].errors">{{getErrorMessage(Configuration.controls['name'].errors)}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Author</mat-label>
+      <input matInput formControlName="author" placeholder="Email eingeben">
+      <mat-error *ngIf="Configuration.controls['author'].errors">{{getErrorMessage(Configuration.controls['author'].errors)}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select formControlName="type">
+        <mat-option value="frontend">Client</mat-option>
+        <mat-option value="library">Control Library</mat-option>
+        <mat-option value="framework">Application Framework</mat-option>
+      </mat-select>
+      <mat-label>
+        Projekttyp
+      </mat-label>
+    </mat-form-field>
+    <mat-checkbox *ngIf="Configuration.value.type === 'frontend'" formControlName="memoryDb">In-memory Datenbank anlegen</mat-checkbox>
+    <button mat-raised-button color="primary" [disabled]="Configuration.invalid" (click)="create()">Anlegen</button>
+  </form>
+
+</div>

@@ -4,8 +4,8 @@ import { ProjectNotFoundComponent } from './components/project-not-found/project
 import { RouterModule, Routes } from '@angular/router';
 
 const ROUTES: Routes = [
-  { path: 'wpf', component: AngularConfigComponent },
-  { path: 'angular', component: WpfConfigComponent },
+  { path: 'wpf', component: WpfConfigComponent },
+  { path: 'angular', component: AngularConfigComponent },
   { path: '**', component: ProjectNotFoundComponent }
 ];
 
