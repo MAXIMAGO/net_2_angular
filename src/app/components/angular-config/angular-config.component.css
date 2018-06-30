@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  padding: 16px;
+}
+
+.config__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.config__container > button {
+  margin-top: 16px;
+}
+
+.config__container > mat-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.config__container > mat-checkbox {
+  margin: 5px;
+}
+
+.config__container > mat-radio-group > mat-radio-button {
+  margin: 5px;
+}

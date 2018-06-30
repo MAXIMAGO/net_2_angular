@@ -20,6 +20,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 /** Used @angular/material modules */
 const MATERIAL = [
@@ -32,7 +33,8 @@ const MATERIAL = [
   MatRadioModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatInputModule
+  MatInputModule,
+  MatCardModule
 ];
 
 /** Used custom components */

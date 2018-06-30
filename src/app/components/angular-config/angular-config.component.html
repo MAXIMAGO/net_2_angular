@@ -1,3 +1,20 @@
-<p>
-  angular-config works!
-</p>
+<div class="config__container">
+  <form class="config__container" [formGroup]="Configuration">
+    <mat-form-field>
+      <input matInput formControlName="name" placeholder="Projektname">
+      <mat-error *ngIf="Configuration.controls['name'].errors">{{getErrorMessage(Configuration.controls['name'].errors)}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Author</mat-label>
+      <input matInput formControlName="author" placeholder="Email eingeben">
+      <mat-error *ngIf="Configuration.controls['author'].errors">{{getErrorMessage(Configuration.controls['author'].errors)}}</mat-error>
+    </mat-form-field>
+    <mat-radio-group formControlName="module">
+      <mat-radio-button *ngFor="let module of Modules" [value]="module.value">{{module.display}}</mat-radio-button>
+    </mat-radio-group>
+    <mat-checkbox formControlName="memoryDb">In-memory Datenbank anlegen</mat-checkbox>
+    <button mat-raised-button color="primary" [disabled]="Configuration.invalid" (click)="create()">Anlegen</button>
+    <button mat-raised-button color="accent" *ngIf="!Configuration.pristine" (click)="reset()">Verwerfen</button>
+  </form>
+
+</div>
