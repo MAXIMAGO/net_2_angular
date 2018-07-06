@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/forms';
+import { ProjectService } from '../../services/project/project.service';
+import { NavigationService } from './../../services/navigation/navigation.service';
 
 @Component({
   selector: 'm-wpf-config',
@@ -9,7 +11,7 @@ import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/f
 export class WpfConfigComponent implements OnInit {
   public Configuration: FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private _NavigationService: NavigationService, private _ProjectService: ProjectService) {
     this.Configuration = fb.group({
       name: ['', Validators.required],
       type: ['', Validators.required],
@@ -36,6 +38,7 @@ export class WpfConfigComponent implements OnInit {
   }
 
   public create(): void {
-    console.log('call a service to create');
+    this._ProjectService.scuffoldProject(this.Configuration.value).subscribe(() => {});
+    this._NavigationService.navigateHome();
   }
 }

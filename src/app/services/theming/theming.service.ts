@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Theme } from './theme.enum';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
+/**
+ * Service wrapping the rather complicated theming mechanism in a code friedly consumable fashion.
+ */
 @Injectable({
   providedIn: 'root'
 })

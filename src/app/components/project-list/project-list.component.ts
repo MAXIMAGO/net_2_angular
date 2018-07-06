@@ -1,7 +1,8 @@
+import { NavigationService } from './../../services/navigation/navigation.service';
 import { ProjectService, IProject } from './../../services/project/project.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 import { SubscriptionLike } from 'rxjs';
+import { AppStateService } from '../../services/app-state/app-state.service';
 
 @Component({
   selector: 'm-project-list',
@@ -14,7 +15,11 @@ export class ProjectListComponent implements OnInit {
 
   @Output() Loaded = new EventEmitter<void>();
 
-  constructor(private _ProjectService: ProjectService, private _Router: Router) {}
+  constructor(
+    private _ProjectService: ProjectService,
+    private _NavigationService: NavigationService,
+    private _AppStateService: AppStateService
+  ) {}
 
   ngOnInit() {
     this.registerSubscription(
@@ -26,7 +31,15 @@ export class ProjectListComponent implements OnInit {
   }
 
   public onProject(project: IProject): void {
-    this._Router.navigateByUrl(`/${project.Key}`);
+    this._AppStateService.CloseMenue();
+    switch (project.Key) {
+      case 'wpf':
+        this._NavigationService.navigateWpf();
+        break;
+      case 'angular':
+        this._NavigationService.navigateAngular();
+        break;
+    }
   }
 
   private registerSubscription(subscription: SubscriptionLike): void {

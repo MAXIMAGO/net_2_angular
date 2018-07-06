@@ -1,6 +1,6 @@
-import { ThemingService } from './../../services/theming/theming.service';
 import { Component, OnInit } from '@angular/core';
-import { Theme } from '../../services/theming/theme.enum';
+import { Theme } from './../../services/theming/theme.enum';
+import { ThemingService } from '../../services/theming/theming.service';
 
 @Component({
   selector: 'm-main-menue',

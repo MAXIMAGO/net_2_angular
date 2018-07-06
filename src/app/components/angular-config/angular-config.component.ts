@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/forms';
 import { prefixValidator } from './prefixVvalidator';
+import { NavigationService } from '../../services/navigation/navigation.service';
+import { ProjectService } from '../../services/project/project.service';
 @Component({
   selector: 'm-angular-config',
   templateUrl: './angular-config.component.html',
@@ -17,7 +19,7 @@ export class AngularConfigComponent implements OnInit {
     { value: 'esnext', display: 'ES.Next' }
   ];
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private _NavigationService: NavigationService, private _ProjectService: ProjectService) {
     this.Configuration = fb.group({
       name: ['', [Validators.required, prefixValidator('M')]],
       module: ['es2015', Validators.required],
@@ -46,8 +48,8 @@ export class AngularConfigComponent implements OnInit {
   }
 
   public create(): void {
-    console.log('call a service to create');
-    this.reset();
+    this._ProjectService.scuffoldProject(this.Configuration.value).subscribe(() => {});
+    this._NavigationService.navigateHome();
   }
 
   public reset(): void {

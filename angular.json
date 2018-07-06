@@ -104,6 +104,41 @@
           }
         }
       }
+    },
+    "m-core": {
+      "root": "projects/m-core",
+      "sourceRoot": "projects/m-core/src",
+      "projectType": "library",
+      "prefix": "mcore",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/m-core/tsconfig.lib.json",
+            "project": "projects/m-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/m-core/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/m-core/src/test.ts",
+            "tsConfig": "projects/m-core/tsconfig.spec.json",
+            "karmaConfig": "projects/m-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["projects/m-core/tsconfig.lib.json", "projects/m-core/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "defaultProject": "net2angular"

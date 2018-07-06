@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "m-core": [
+        "dist/m-core"
+      ],
+      "m-core/*": [
+        "dist/m-core/*"
+      ]
+    }
   }
 }
