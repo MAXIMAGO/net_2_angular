@@ -1,0 +1,32 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+/* Blue Theme */
+$blue-primary: mat-palette($mat-indigo);
+$blue-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$blue-light-theme: mat-light-theme($blue-primary, $blue-accent);
+$blue-dark-theme: mat-dark-theme($blue-primary, $blue-accent);
+
+/** Violett Theme **/
+$purple-primary: mat-palette($mat-purple);
+$purple-accent: mat-palette($mat-red, A200, A100, A400);
+
+$purple-light-theme: mat-light-theme($purple-primary, $purple-accent);
+$purple-dark-theme: mat-dark-theme($purple-primary, $purple-accent);
+
+// Include the default theme styles.
+@include angular-material-theme($blue-light-theme);
+
+.theme__blue__dark {
+  @include angular-material-theme($blue-dark-theme);
+}
+
+.theme__purple__light {
+  @include angular-material-theme($purple-light-theme);
+}
+
+.theme__purple__dark {
+  @include angular-material-theme($purple-dark-theme);
+}

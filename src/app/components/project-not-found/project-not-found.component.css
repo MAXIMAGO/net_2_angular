@@ -2,7 +2,8 @@
   display: flex;
   margin: 16px;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 
 .not-found__message {

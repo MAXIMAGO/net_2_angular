@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/forms';
 
 @Component({
-  selector: 'app-wpf-config',
+  selector: 'm-wpf-config',
   templateUrl: './wpf-config.component.html',
   styleUrls: ['./wpf-config.component.css']
 })

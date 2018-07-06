@@ -1,0 +1,26 @@
+:host {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.container {
+  height: 100%;
+}
+
+.container__sidenav {
+  height: 100%;
+}
+
+.container__header {
+  cursor: pointer;
+}
+
+.container__help {
+  margin-left: auto;
+}
+
+.container__content {
+}

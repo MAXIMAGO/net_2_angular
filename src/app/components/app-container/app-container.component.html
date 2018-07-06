@@ -1,0 +1,15 @@
+<div [class]="Theming.ThemeClass + ' container'">
+  <mat-sidenav-container class="container__sidenav">
+    <mat-sidenav #menue mode="over">
+      <m-project-list></m-project-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <button mat-raised-button color="primary" class="container__header" (click)="menue.open()">Projekt Konfigurator</button>
+        <m-main-menue class="container__help"></m-main-menue>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

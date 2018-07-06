@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { SubscriptionLike } from 'rxjs';
 
 @Component({
-  selector: 'app-project-list',
+  selector: 'm-project-list',
   templateUrl: './project-list.component.html',
   styleUrls: ['./project-list.component.css']
 })

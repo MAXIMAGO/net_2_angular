@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/forms';
 import { prefixValidator } from './prefixVvalidator';
 @Component({
-  selector: 'app-angular-config',
+  selector: 'm-angular-config',
   templateUrl: './angular-config.component.html',
   styleUrls: ['./angular-config.component.css']
 })

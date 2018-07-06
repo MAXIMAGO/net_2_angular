@@ -1,0 +1,13 @@
+<button mat-button [matMenuTriggerFor]="mainMenue">Hilfe</button>
+<mat-menu #mainMenue="matMenu">
+  <button mat-menu-item>Info</button>
+  <button mat-menu-item>Update Suchen</button>
+  <button mat-menu-item [matMenuTriggerFor]="themingMenue">Theme</button>
+</mat-menu>
+
+<mat-menu #themingMenue="matMenu">
+  <button mat-menu-item (click)="changeTheme(Theming.Blue)">Blau (hell)</button>
+  <button mat-menu-item (click)="changeTheme(Theming.BlueDark)">Blau (dunkel)</button>
+  <button mat-menu-item (click)="changeTheme(Theming.Purple)">Violett (hell)</button>
+  <button mat-menu-item (click)="changeTheme(Theming.PurpleDark)">Violett (dunkel)</button>
+</mat-menu>
