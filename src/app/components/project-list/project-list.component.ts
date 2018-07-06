@@ -39,6 +39,9 @@ export class ProjectListComponent implements OnInit {
       case 'angular':
         this._NavigationService.navigateAngular();
         break;
+      case 'react':
+        this._NavigationService.navigateReact();
+        break;
     }
   }
 

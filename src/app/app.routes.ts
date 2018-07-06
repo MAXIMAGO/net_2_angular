@@ -11,6 +11,7 @@ const ROUTES: Routes = [
     children: [
       { path: 'wpf', component: WpfConfigComponent },
       { path: 'angular', component: AngularConfigComponent },
+      { path: 'react', loadChildren: 'm-core#ReactConfigModule' },
       { path: '**', component: ProjectNotFoundComponent }
     ]
   }

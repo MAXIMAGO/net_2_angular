@@ -1,3 +1,4 @@
+/** Angular */
 import { IN_MEMORY_DB } from './storage/in-memory.imort';
 import { APP_ROUTING } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,15 +6,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { ProjectListComponent } from './components/project-list/project-list.component';
-import { AppContainerComponent } from './components/app-container/app-container.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { WpfConfigComponent } from './components/wpf-config/wpf-config.component';
-import { AngularConfigComponent } from './components/angular-config/angular-config.component';
-import { ProjectNotFoundComponent } from './components/project-not-found/project-not-found.component';
-import { MainMenueComponent } from './components/main-menue/main-menue.component';
-
+/** Angular.Material */
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -26,6 +19,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+/** local exports */
+import { AppComponent } from './app.component';
+import { ProjectListComponent } from './components/project-list/project-list.component';
+import { AppContainerComponent } from './components/app-container/app-container.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WpfConfigComponent } from './components/wpf-config/wpf-config.component';
+import { AngularConfigComponent } from './components/angular-config/angular-config.component';
+import { ProjectNotFoundComponent } from './components/project-not-found/project-not-found.component';
+import { MainMenueComponent } from './components/main-menue/main-menue.component';
 
 /** Used @angular/material modules */
 const MATERIAL = [
@@ -51,14 +54,15 @@ const COMPONENTS = [
   ProjectListComponent,
   WpfConfigComponent,
   AngularConfigComponent,
-  ProjectNotFoundComponent
+  ProjectNotFoundComponent,
+  MainMenueComponent
 ];
 
 /** Used angular modules */
-const ANGULAR = [BrowserModule, ReactiveFormsModule, HttpClientModule];
+const ANGULAR = [BrowserModule, HttpClientModule];
 @NgModule({
-  declarations: [COMPONENTS, MainMenueComponent],
-  imports: [ANGULAR, IN_MEMORY_DB, MATERIAL, APP_ROUTING],
+  declarations: [COMPONENTS],
+  imports: [ANGULAR, IN_MEMORY_DB, MATERIAL, APP_ROUTING, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -23,4 +23,8 @@ export class NavigationService {
   public navigateAngular() {
     this._Router.navigateByUrl('/angular');
   }
+
+  public navigateReact() {
+    this._Router.navigateByUrl('/react');
+  }
 }
