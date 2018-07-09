@@ -27,4 +27,8 @@ export class NavigationService {
   public navigateReact() {
     this._Router.navigateByUrl('/react');
   }
+
+  public navigateServiceNet() {
+    this._Router.navigateByUrl('/service/net');
+  }
 }

@@ -11,7 +11,13 @@ const ROUTES: Routes = [
     children: [
       { path: 'wpf', component: WpfConfigComponent },
       { path: 'angular', component: AngularConfigComponent },
-      { path: 'react', loadChildren: 'm-core#ReactConfigModule' },
+      /**
+       * See in the dev tools network monitor that the following two modules will only be loaded if requested
+       * This is one of the key features in general to keep in mind while
+       * writing larger scaled web applications.
+       */
+      { path: 'react', loadChildren: './lazy-external/lazy-external.module#LazyExternalModule' },
+      { path: 'service', loadChildren: './net-service-config/net-service-config.module#NetServiceConfigModule' },
       { path: '**', component: ProjectNotFoundComponent }
     ]
   }

@@ -18,9 +18,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 /** local exports */
-import { ReactConfigComponent } from './react-config.component';
+import { NetServiceConfigComponent } from './net-service-config.component';
 
-const routes: Routes = [{ path: '', component: ReactConfigComponent }];
+const routes: Routes = [{ path: 'net', component: NetServiceConfigComponent }];
 
 /** Used @angular/material modules */
 const MATERIAL = [
@@ -40,6 +40,6 @@ const MATERIAL = [
 
 @NgModule({
   imports: [CommonModule, MATERIAL, RouterModule.forChild(routes)],
-  declarations: [ReactConfigComponent]
+  declarations: [NetServiceConfigComponent]
 })
-export class ReactConfigModule {}
+export class NetServiceConfigModule {}

@@ -1,6 +1,6 @@
 <mat-list>
   <mat-list-item *ngFor="let project of Projects">
-    <button mat-button (click)="onProject(project)">
+    <button class="list-button" mat-button (click)="onProject(project)">
       {{project.Name}}
     </button>
   </mat-list-item>
